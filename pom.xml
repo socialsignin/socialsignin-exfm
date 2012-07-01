@@ -25,7 +25,7 @@
 	<properties>
 	   <org.socialsignin.provider.version>1.0.2-SNAPSHOT</org.socialsignin.provider.version>
 	   <org.springframework.social.exfm.version>1.0.2-SNAPSHOT</org.springframework.social.exfm.version>
-	   <org.socialsignin.springsocial.security.version>1.0.1-SNAPSHOT</org.socialsignin.springsocial.security.version>
+	   <org.socialsignin.springsocial.security.version>1.0.2-SNAPSHOT</org.socialsignin.springsocial.security.version>
 	   
 	</properties>
 	<distributionManagement>

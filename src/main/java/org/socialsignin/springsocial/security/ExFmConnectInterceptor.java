@@ -15,7 +15,7 @@
  */
 package org.socialsignin.springsocial.security;
 
-import org.socialsignin.springframework.social.security.signin.SpringSocialSecurityConnectInterceptor;
+import org.socialsignin.springsocial.security.signin.SpringSocialSecurityConnectInterceptor;
 import org.springframework.social.exfm.api.ExFm;
 import org.springframework.stereotype.Component;
 
