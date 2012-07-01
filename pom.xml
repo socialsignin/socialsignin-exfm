@@ -20,12 +20,12 @@
 	<groupId>org.socialsignin</groupId>
 	<artifactId>socialsignin-exfm</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<name>SocialSignIn ExFm Provider</name>
 	<properties>
-	   <org.socialsignin.provider.version>1.0.1-SNAPSHOT</org.socialsignin.provider.version>
-	   <org.springframework.social.exfm.version>1.0.1-SNAPSHOT</org.springframework.social.exfm.version>
-	   <org.socialsignin.spring.social.security.version>1.0.1-SNAPSHOT</org.socialsignin.spring.social.security.version>
+	   <org.socialsignin.provider.version>1.0.2-SNAPSHOT</org.socialsignin.provider.version>
+	   <org.springframework.social.exfm.version>1.0.2-SNAPSHOT</org.springframework.social.exfm.version>
+	   <org.socialsignin.springsocial.security.version>1.0.1-SNAPSHOT</org.socialsignin.springsocial.security.version>
 	   
 	</properties>
 	<distributionManagement>
@@ -41,7 +41,7 @@
 	<repositories>
 		<repository>
 	        	<id>opensourceagility-snapshots</id>
-	        	<url>https://github.com/OpenSourceAgility/opensourceagility-mvn-repo/raw/master/snapshots</url>
+	        	<url>http://repo.opensourceagility.com/snapshots</url>
 	    	</repository>
 	</repositories>
 
@@ -54,7 +54,7 @@
 		<dependency>
 			<groupId>org.socialsignin</groupId>
 			<artifactId>spring-social-security</artifactId>
-			<version>${org.socialsignin.spring.social.security.version}</version>
+			<version>${org.socialsignin.springsocial.security.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.socialsignin</groupId>
