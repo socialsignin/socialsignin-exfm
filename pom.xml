@@ -25,7 +25,7 @@
 	<properties>
 	   <org.socialsignin.provider.version>1.0.2-SNAPSHOT</org.socialsignin.provider.version>
 	   <org.springframework.social.exfm.version>1.0.2-SNAPSHOT</org.springframework.social.exfm.version>
-	   <org.socialsignin.springsocial.security.version>1.0.2-SNAPSHOT</org.socialsignin.springsocial.security.version>
+	   <org.socialsignin.springsocial.security.version>1.0.2.RELEASE</org.socialsignin.springsocial.security.version>
 	   
 	</properties>
 	<distributionManagement>
@@ -42,6 +42,10 @@
 		<repository>
 	        	<id>opensourceagility-snapshots</id>
 	        	<url>http://repo.opensourceagility.com/snapshots</url>
+	    	</repository>
+		<repository>
+	        	<id>opensourceagility-releases</id>
+	        	<url>http://repo.opensourceagility.com/releases</url>
 	    	</repository>
 	</repositories>
 
