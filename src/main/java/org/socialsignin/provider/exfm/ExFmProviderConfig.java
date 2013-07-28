@@ -38,105 +38,52 @@ public class ExFmProviderConfig extends AbstractProviderConfig<ExFm> {
 	@Autowired(required=false)
 	private ExFmConnectInterceptor exfmConnectInterceptor;
 
-	@Value("${exfm.consumerKey}")
-	private String exfmConsumerKey;
 	
-	@Value("${exfm.consumerSecret}")
-	private String exfmConsumerSecret;
-	
-
-	@Value("${exfm.oauthTokenUrl}")
-	private String exfmOAuthTokenUrl;
-	
-	@Value("${exfm.oauthAuthorizeUrl}")
-	private String exfmOAuthAuthorizeUrl;
-	
-
-	@Value("${exfm.oauthApiBaseUrl}")
-	private String exfmOAuthApiBaseUrl;
 	
 	
 	public ExFmProviderConfig() {
 		super();
 	}
 	
-	public ExFmProviderConfig(String exfmConsumerKey,
+	public ExFmProviderConfig(
 			ExFm authenticatedApi) {
 		super(authenticatedApi);
-		this.exfmConsumerKey = exfmConsumerKey;
 	}
 	
 	/*
 	 * When Ex.Fm implement an Oauth API, this consructor would be more useful, until then
 	 * the we'll use a username/password constructor
 	 * 
-	public ExFmProviderConfig(String exfmOAuthApiBaseUrl,String exfmConsumerKey,String accessToken) {
+	public ExFmProviderConfig(String exfmOAuthApiBaseUrl,String accessToken) {
 		super(new ExFmTemplate(exfmOAuthApiBaseUrl,accessToken));
-		this.exfmConsumerKey = exfmConsumerKey;
 		this.exfmOAuthApiBaseUrl = exfmOAuthApiBaseUrl;
 	}
 	*/
 	
 	public ExFmProviderConfig(String exfmOAuthApiBaseUrl,String username,String password) {
 		super(new ExFmTemplate(exfmOAuthApiBaseUrl,username,password));
-		this.exfmOAuthApiBaseUrl = exfmOAuthApiBaseUrl;
 	}
 	
 	
-	public ExFmProviderConfig(String exfmOAuthApiBaseUrl,String exfmConsumerKey,String exfmConsumerSecret,ConnectionRepository connectionRepository,
-			ConnectionFactoryRegistry connectionFactoryRegistry) {
-		super(connectionRepository, connectionFactoryRegistry);
-		this.exfmConsumerKey = exfmConsumerKey;
-		this.exfmConsumerSecret  = exfmConsumerSecret;
-		this.exfmOAuthApiBaseUrl = exfmOAuthApiBaseUrl;
+	public ExFmProviderConfig(String exfmOAuthApiBaseUrl,ConnectionRepository connectionRepository) {
+		super(connectionRepository);
+	
 
 	}
 
-	public ExFmProviderConfig(String exfmOAuthApiBaseUrl,String exfmConsumerKey,String exfmConsumerSecret,ConnectionRepository connectionRepository,
-			UsersConnectionRepository usersConnectionRepository,
-			ConnectionFactoryRegistry connectionFactoryRegistry) {
-		super(connectionRepository, usersConnectionRepository,
-				connectionFactoryRegistry);
-		this.exfmConsumerKey = exfmConsumerKey;
-		this.exfmConsumerSecret  = exfmConsumerSecret;
-		this.exfmOAuthApiBaseUrl = exfmOAuthApiBaseUrl;
+	public ExFmProviderConfig(String exfmOAuthApiBaseUrl,ConnectionRepository connectionRepository,
+			UsersConnectionRepository usersConnectionRepository) {
+		super(connectionRepository, usersConnectionRepository);
+		
 
 	}
 	
-	public ExFmProviderConfig(String exfmOAuthApiBaseUrl,String exfmConsumerKey,String exfmConsumerSecret,String userId,	UsersConnectionRepository usersConnectionRepository,
-			ConnectionFactoryRegistry connectionFactoryRegistry) {
-		super(userId,usersConnectionRepository,
-				connectionFactoryRegistry);
-		this.exfmConsumerKey = exfmConsumerKey;
-		this.exfmConsumerSecret  = exfmConsumerSecret;
-		this.exfmOAuthApiBaseUrl = exfmOAuthApiBaseUrl;
+	public ExFmProviderConfig(String exfmOAuthApiBaseUrl,String userId,	UsersConnectionRepository usersConnectionRepository) {
+		super(userId,usersConnectionRepository);
+	
 	}
 
-	public void setexfmConsumerKey(String exfmConsumerKey) {
-		this.exfmConsumerKey = exfmConsumerKey;
-	}
-
-	public void setexfmConsumerSecret(String exfmConsumerSecret) {
-		this.exfmConsumerSecret = exfmConsumerSecret;
-	}
-
-	public void setExfmOAuthTokenUrl(String exfmOAuthTokenUrl) {
-		this.exfmOAuthTokenUrl = exfmOAuthTokenUrl;
-	}
-
-	public void setExfmOAuthAuthorizeUrl(String exfmOAuthAuthorizeUrl) {
-		this.exfmOAuthAuthorizeUrl = exfmOAuthAuthorizeUrl;
-	}
-
-	public void setExfmOAuthApiBaseUrl(String exfmOAuthApiBaseUrl) {
-		this.exfmOAuthApiBaseUrl = exfmOAuthApiBaseUrl;
-	}
-
-	@Override
-	protected ConnectionFactory<ExFm> createConnectionFactory() {
-		return new ExFmConnectionFactory(exfmConsumerKey,
-				exfmConsumerSecret,exfmOAuthAuthorizeUrl,exfmOAuthTokenUrl,exfmOAuthApiBaseUrl);
-	}
+	
 
 	@Override
 	protected ConnectInterceptor<ExFm> getConnectInterceptor() {
